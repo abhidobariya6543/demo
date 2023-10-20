@@ -163,6 +163,7 @@
 .small-product img {
     height: 250px;
     object-fit: cover;
+    width: 100%;
 }
 
 .big-product img {
@@ -217,7 +218,7 @@
     }
 
     .product-image img {
-        height: 380px;
+        height: 230px;
     }
 
     .zoom-product img {
@@ -226,5 +227,32 @@
 
     .big-product {
         margin-bottom: 16px;
+    }
+
+    .product-slider .product-image img {
+        height: 380px;
+    }
+
+    .last-col {
+        display: flex;
+        gap: 20px;
+    }
+
+    .zoom-product button {
+        padding: 8px 16px;
+    }
+
+    .zoom-product img {
+        height: 200px;
+    }
+
+    .small-product {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .product-image img {
+        height: 200px;
     }
 }
