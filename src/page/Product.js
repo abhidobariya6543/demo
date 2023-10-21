@@ -10,7 +10,7 @@ import safeCheckout from '../images/safe-checkout.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faStarHalf } from '@fortawesome/free-solid-svg-icons';
 
-const Product = () => {
+const Product = ({ data }) => {
     const settings = {
         dots: false,
         infinite: true,
@@ -49,16 +49,11 @@ const Product = () => {
                     <div className='row'>
                         <div className='col-md-6 product-view-slider'>
                             <Slider {...settings}>
-                                <div>
-                                    <div className='product-view'>
-                                        <img src={product} />
+                                {data?.image?.map((imageUrl, index) => (
+                                    <div className='product-view' key={index}>
+                                        <img src={imageUrl} alt={`Product ${index}`} />
                                     </div>
-                                </div>
-                                <div>
-                                    <div className='product-view'>
-                                        <img src={product} />
-                                    </div>
-                                </div>
+                                ))}
                             </Slider>
                         </div>
                         <div className='col-md-6 mt-md-0 mt-4'>
@@ -75,11 +70,6 @@ const Product = () => {
                                 <h5 className='main-product-price my-3'>Rs. 15,300.00</h5>
                                 <p style={{ fontSize: '14px' }}>In stock - Ready to ship</p>
                                 <p style={{ fontSize: '14px' }} className='fw-bold mb-1'>Color : Blue</p>
-                                <ul className='d-flex product-color-list'>
-                                    <li className='active'><img src={product} /></li>
-                                    <li><img src={product} /></li>
-                                    <li><img src={product} /></li>
-                                </ul>
                                 <p style={{ fontSize: '14px' }} className='fw-bold mb-1 mt-4'>Size : XS</p>
                                 <ul className='d-flex product-size-list'>
                                     <li className='active d-flex align-items-center justify-content-center'>XS</li>
